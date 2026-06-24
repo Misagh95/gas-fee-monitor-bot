@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: gas-fee-monitor-bot
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ADMIN_CHAT_ID
+        sync: false
+      - key: DATA_DIR
+        value: .
+      - key: CHECK_INTERVAL
+        value: 120
+      - key: ETHERSCAN_API_KEY
+        sync: false
